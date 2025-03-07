@@ -18,6 +18,12 @@ family detail page
         <p>Mother Name:{{family.mother.first_name}}{{family.mother.last_name}}</p>
         <p>Phine number:{{family.mother.phone}}</p>
     </div>
+    <div>
+        <h1>Child Details</h1>
+        {% for x in family.child.all %}
+        <p>Child Name:{{x.first_name}}{{x.last_name}}</p>
+        {% endfor %}
+    </div>
 </div>
 
 
