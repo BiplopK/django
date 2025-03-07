@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+Index Page
+{% endblock %}
+
+{% block content %}
+    <h1>Users</h1>
+    <ul>
+        {% for x in newusers %}
+           <li><a href="detail/{{x.id}}/">{{x.first_name}} {{x.last_name}}</a></li> 
+        {% endfor %}
+    </ul>
+
+    <p>Go back to home <a href="/">Home</a></p>
+{% endblock %}
