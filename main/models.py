@@ -14,3 +14,5 @@ class Family(models.Model):
     father=models.ForeignKey(User,on_delete=models.CASCADE,related_name="father_of_families")
     mother=models.ForeignKey(User,on_delete=models.CASCADE,related_name="mother_f_families")
     family_name=models.CharField(max_length=50)
+    child=models.ManyToManyField(User,related_name="child_of_families")
+    
