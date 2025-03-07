@@ -9,3 +9,8 @@ class User(models.Model):
     
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+    
+class Family(models.Model):
+    father=models.ForeignKey(User,on_delete=models.CASCADE,related_name="father_of_families")
+    mother=models.ForeignKey(User,on_delete=models.CASCADE,related_name="mother_f_families")
+    family_name=models.CharField(max_length=50)
