@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+family detail page
+{% endblock %}
+
+{% block content %}
+
+<center><h1>Family name: {{family.family_name}}</h1></center>
+<div class="container">
+    <div class="father_data">
+        <h1>Family Detial</h1>
+    
+    <p>father name:{{family.father.first_name}}{{family.father.last_name}}</p>
+    <p>Phone number:{{family.father.phone}}</p>
+    </div>
+    <div class="mother_data">
+        <h1>Mother Details</h1>
+        <p>Mother Name:{{family.mother.first_name}}{{family.mother.last_name}}</p>
+        <p>Phine number:{{family.mother.phone}}</p>
+    </div>
+</div>
+
+
+
+{% endblock %}

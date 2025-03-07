@@ -24,4 +24,6 @@ urlpatterns = [
     path("",home,name='home'),
     path("user/", index,name='index'),
     path("user/detail/<int:id>/",detail,name='detail'),
+    path('family/',family,name='family'),
+    path("family/family_detail/<int:id>/",family_detail,name='family_detail'),
 ]
