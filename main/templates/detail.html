@@ -9,6 +9,7 @@ Detail Page
     <p>Phone Number: {{user.phone}}</p>
     <p>Date Joined: {{user.date_joined}}</p>
     <br>
+    <a href="{% url 'index' %}">Go Back</a>
     <p><a href="{% url 'update-user' user.id %}">Update</a></p>
     <p><a href="{% url 'delete-user' user.id %}">Delete</a></p>
     {% if families %}

@@ -111,13 +111,7 @@ def delete_user(request,id):
     return render(request,'delete.html',{'obj':data})
 
 
-# def tree(request,id):
-#     families=get_object_or_404(Family, id=id) 
-#     context={
-#         'families':families
-#     }
-    
-#     return render(request,'tree.html',context)
+
 
 def tree(request,id):
     users=Users.objects.get(id=id)
@@ -128,18 +122,6 @@ def tree(request,id):
     }
     return render(request,'tree.html',context)
 
-# def tree(request,id):
-    
-#     family=Family.objects.filter(id=id)
-#     father_name=family.father.__str__ if family.father else "Unknown"
-#     mother_name=family.mother.__str__ if family.mother else "Unknown"
-    
-#     context={
-#         "family": family,
-#         "father_name": father_name,
-#         "mother_name": mother_name
-#     }
-#     return render(request,'tree.html',context)\
 
 
 
