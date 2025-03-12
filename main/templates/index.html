@@ -5,11 +5,13 @@ Index Page
 
 {% block content %}
     <h1>Users</h1>
-    <ul>
+    {% if not newusers %}
+    No data available
+    {% else %}
         {% for x in newusers %}
-           <li><a href="detail/{{x.id}}/">{{x.first_name}} {{x.last_name}}</a></li> 
+           <a href="detail/{{x.id}}/">{{x.first_name}} {{x.last_name}}</a><br><br>
+           
         {% endfor %}
-    </ul>
-    <p>Go back to home <a href="/">Home</a></p>
-    <p>Go back to family <a href="family/">Family</a></p>
+    {% endif %}
+    
 {% endblock %}

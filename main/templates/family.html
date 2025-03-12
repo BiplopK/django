@@ -5,9 +5,24 @@ Family Detail
 
 {% block content %}
 <h1>Family</h1>
+{% if not family %}
+No Data available
+{% else %}
 {% for x in family %}
     <a href="family_detail/{{x.id}}">{{x.family_name}}</a>
+    
+
+    <div>
+        <span><a href="{% url 'delete-details' x.id %}">Delete</a></span>
+        <span><a href="{% url 'update-details' x.id %}">Edit</a></span>
+        
+    </div>
+    <hr>
+    
+    
+
 {% endfor %}
+{% endif %}
 
 
 {% endblock %}

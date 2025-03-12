@@ -8,23 +8,35 @@ family detail page
 <center><h1>Family name: {{family.family_name}}</h1></center>
 <div class="container">
     <div class="father_data">
-        <h1>Family Detial</h1>
-    
-    <p>father name:{{family.father.first_name}}{{family.father.last_name}}</p>
-    <p>Phone number:{{family.father.phone}}</p>
+        <h1>Family Details</h1>
+    <!-- {% if not family.father.is_deleted %} -->
+        <p>father name:{{family.father.first_name }} {{family.father.last_name}}</p>
+        <p>Phone number:{{family.father.phone}}</p>
+    <!-- {% else %} -->
+        
+    <!-- {% endif %} -->
     </div>
     <div class="mother_data">
         <h1>Mother Details</h1>
-        <p>Mother Name:{{family.mother.first_name}}{{family.mother.last_name}}</p>
-        <p>Phine number:{{family.mother.phone}}</p>
+        <!-- {% if not family.mother.is_deleted %} -->
+            <p>Mother Name:{{family.mother.first_name }} {{family.mother.last_name}}</p>
+            <p>Phone number:{{family.mother.phone}}</p>
+        <!-- {% else %} -->
+            
+        <!-- {% endif %} -->
     </div>
     <div>
         <h1>Child Details</h1>
         {% for x in family.child.all %}
-        <p>Child Name:{{x.first_name}}{{x.last_name}}</p>
+        <p>Child Name:{{x.first_name }} {{x.last_name}}</p>
         {% endfor %}
     </div>
+    
+
+
 </div>
+<a href="{% url 'family' %}">Go Back</a>
+
 
 
 

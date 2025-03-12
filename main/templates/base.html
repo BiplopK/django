@@ -4,10 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <style>
+        ul{
+            background-color: #333;
+            overflow: hidden;
+        }
+        li{
+            display: inline;
+        }
+        a{
+        
+            padding: 8px;
+            overflow: hidden;
+        }
+        li a{
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          li a:hover {
+            background-color: #111111;
+          }
+    </style>
     <link rel="stylesheet" href="{% static 'index_page.css' %}">
     
 </head>
 <body>
+    <ul>
+        <div></div>
+        <li><a href="/">Home</a></li>
+        <li><a href="{% url 'index' %}">User</a></li>
+        <li><a href="{% url 'family' %}">Family</a></li>
+        <li><a href="{% url 'createuser' %}">Add User </a></li>
+        <li><a href="{% url 'createfamily' %}">Add Family</a></li>
+        <li><form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+          </form></li>
+    </ul>
     {% block content %}
     {% endblock %}
 </body>
