@@ -31,6 +31,15 @@
         <div class="node">
             {% if family %}
                 <strong>{{family.family_name}}</strong>
+                <div class="node">
+                    <p>{{father_family.father.first_name}} {{father_family.father.last_name}}</p>
+                </div>
+                <div class="node"><p>{{father_family.mother.first_name}} {{father_family.mother.last_name}}</p></div>
+                <div class="node"><p>{{mother_family.father.first_name}} {{mother_family.mother.last_name}}</p></div>
+                <div class="node">
+                    <p>{{mother_family.mother.first_name}} {{mother_family.mother.last_name}}</p>
+                </div>
+                
                 <div class="line"></div>
                 {% if family.father %}
                     <div class="node"><p>{{family.father.first_name}} {{family.father.last_name}}</p></div>

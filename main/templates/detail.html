@@ -5,15 +5,17 @@ Detail Page
 
 {% block content %}
     <h1>User Details</h1>
+
     <h1>{{user.first_name}} {{user.last_name}}</h1>
     <p>Phone Number: {{user.phone}}</p>
     <p>Date Joined: {{user.date_joined}}</p>
     <br>
     <p><a href="{% url 'update-user' user.id %}">Update</a></p>
     <p><a href="{% url 'delete-user' user.id %}">Delete</a></p>
-    {% if families %}
+    {% if family %}
     <a href="{% url 'family-tree' user.id %}">Family Tree</a>
     {% else %}
     No family tree available
     {% endif %}
+    
 {% endblock %}

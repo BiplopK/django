@@ -13,11 +13,13 @@ def index(request):
     return render(request,'index.html',context)
 
 def detail(request,id):
+
     users=Users.objects.get(id=id)  
     families=users.child_of_families.first()
+    
     context={
         'user':users,
-        'families':families
+        "family":families
     }
     return render(request,'detail.html',context)
 
@@ -120,11 +122,20 @@ def delete_user(request,id):
 #     return render(request,'tree.html',context)
 
 def tree(request,id):
+    father_family=None
+    mother_family=None
     users=Users.objects.get(id=id)
-    families=Family.objects.filter(child=users).first()
+    family=Family.objects.filter(child=users).first()
+    # families=users.child_of_families.first()
+    if family and family.father:
+        father_family=family.father.child_of_families.first()
+    if family and family.mother:
+        mother_family=family.mother.child_of_families.first()
     context={
         'users':users,
-        'family':families
+        'family':family,
+        'father_family':father_family,
+        "mother_family": mother_family
     }
     return render(request,'tree.html',context)
 
@@ -140,6 +151,7 @@ def tree(request,id):
 #         "mother_name": mother_name
 #     }
 #     return render(request,'tree.html',context)\
+
 
 
 
